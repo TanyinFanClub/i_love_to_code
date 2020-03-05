@@ -10,10 +10,9 @@ import os
 import random
 import datetime
 
-#email API
+# email API
 from mailjet_rest import Client
-api_key = '98f0f57777524f8bad45334c420ab92c'
-api_secret = '0eaa7213d77293e1f8a422fe0019740b'
+# email API Keys here
 mailjet = Client(auth=(api_key, api_secret), version='v3.1')
 
 #SMS API
