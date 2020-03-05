@@ -1,12 +1,19 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
+from os import environ
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+mysqlconnector://root@localhost:3306/patient"
+# app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+mysqlconnector://root@localhost:3306/patient"
+## run this code in command line:
+## set dbURL=mysql+mysqlconnector://root@localhost:3306/patient 
+## python patient.py
+app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('dbURL')
 app.config['SQLALCHEMY_TRACK_MODOFICATIONS'] = False
 
 db = SQLAlchemy(app)
+CORS(app)
 
 class Patient(db.Model):
     __tablename__ = 'patient'
@@ -62,5 +69,5 @@ def find_by_nric(nric):
 
 
 if __name__ == "__main__":
-    app.run(port=6001, debug = True)
+    app.run(host = '0.0.0.0', port=6001, debug = True)
 
