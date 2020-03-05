@@ -1,0 +1,62 @@
+html,body{
+    background-image: url("../ngtengfong.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+
+.title{
+    font-size: 45px;
+    font-family: Tahoma;
+    color: #660000;
+    text-align: center;
+    font-weight: bold;
+}
+
+#contain_1{
+    top:50%; 
+    left:50%; 
+    margin-right:-50%; 
+    position:absolute; 
+    transform:translate(-50%, -50%)
+}
+
+.card{
+    border-radius: 15px;
+    /* border: 2px solid grey; */
+    padding: 20px;
+    background-color: rgb(212, 209, 209);
+    opacity: 0.9;
+    height: 400px;
+    width: 500px;
+    /* width: 50%; */
+}
+
+.card-body{
+    padding: 25px;
+}
+
+#submit_button{
+    opacity: 1.0;
+}
+
+p{
+    font-size: 20px;
+    font-family: verdana;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(90, 89, 89);
+}
+
+#department{
+    text-align: center;
+}
+
+.p_head{
+    font-size: 20px;
+    font-family: Tahoma;
+    color: #660000;
+}
+
+

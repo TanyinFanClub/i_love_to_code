@@ -1,0 +1,40 @@
+html,body{
+    background-image: url("../ngtengfong.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+
+.col-4{
+    text-align: right;
+    padding-right: 40px;
+}
+
+h2{
+    color:#660000;
+    font-family: Verdana;
+    font-weight: bold;
+}
+
+.container{
+    padding: 20px;
+    background-color: white;
+    /* margin-top: 10px; */
+}
+
+hr{ 
+    height: 3px;
+    color: darkgray;
+    background-color: darkgray;
+    border: none;
+}
+
+#describe{
+    color: grey;
+}
+
+#nric{
+    size: 20px;
+}
+
