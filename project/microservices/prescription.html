@@ -1,0 +1,35 @@
+<script>
+$('#formisbn').submit(async(event) => {           
+// Change serviceURL to your own
+    event.preventDefault();
+    var QueueID = $('#queuid').val()
+    var Registration_timestamp = $("#timestammp").val()
+    var NRIC = $("#nric").val()
+    var Medication_ID = $("#medication_id").val()
+    var serviceURL = "http://127.0.0.1:5000/book"+"/"+QueueID;
+    console.log(QueueID)
+
+    try {
+        const response = await fetch(serviceURL, { method: 'POST',headers: { "Content-Type": "application/json" },body: JSON.stringify  ({ Registration_timestamp: Registration_timestamp, NRIC: NRIC, Medication_ID: Medication_ID })
+    }
+        );
+        const data = await response.json();
+        
+        // array or array.length are false
+        if (!response.ok) {
+            showError('Fail to add the prescription.')
+        } 
+        else {
+            var bookUrl = 'index.html';
+            document.location.href = bookUrl;
+                }
+            
+            // add all the rows to the table
+    } catch (error) {
+        // Errors when calling the service; such as network error, 
+        // service offline, etc
+        showError('There is a problem retrieving prescription data, please try again later.<br />'+error);
+
+    } // error)
+    })
+</script>

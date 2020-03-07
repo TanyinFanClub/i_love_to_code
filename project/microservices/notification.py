@@ -9,7 +9,7 @@ import sys
 import os
 import random
 import datetime
-
+import plivo
 # email API
 from mailjet_rest import Client
 # email API Keys here
@@ -78,6 +78,16 @@ def recieveSMSNotification(nric):
     result = json.loads(r.text.lower())
     if result["status"]:
         # input SMS API syntax stuff here please
+        client = plivo.RestClient("MAMTQ5NTQ4ZWZIZJC4NG", "MTAwYWJmNmM2MTJlM2Y1YmZiY2U4ZjJmNDY3OTdk")
+        response = client.messages.create(
+            src='', #Sender Phone Number
+            dst='', #Receiver Phone Number
+            text=MSG_TO_SEND,
+            url='http://foo.com/sms_status/',
+            )
+        print(response)
+        # prints only the message_uuid
+        print(response.message_uuid)
         pass
     else:
         print("Patient not Found")
