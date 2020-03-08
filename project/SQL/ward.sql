@@ -5,7 +5,7 @@ drop table if exists ward;
 
 CREATE TABLE IF NOT EXISTS Ward(
 	NRIC VARCHAR(9) NOT NULL,
-    name VARCHAR(50) NOT NULL,
+    Name VARCHAR(50) NOT NULL,
     Diagnosis VARCHAR(100) NOT NULL,
     Risks VARCHAR(100) NOT NULL,
     Dietary_Requirements VARCHAR(100) NOT NULL,
