@@ -78,7 +78,7 @@ def recieveSMSNotification(nric):
     result = json.loads(r.text.lower())
     if result["status"]:
         # input SMS API syntax stuff here please
-        client = plivo.RestClient("MAMTQ5NTQ4ZWZIZJC4NG", "MTAwYWJmNmM2MTJlM2Y1YmZiY2U4ZjJmNDY3OTdk")
+        
         response = client.messages.create(
             src='', #Sender Phone Number
             dst='', #Receiver Phone Number
